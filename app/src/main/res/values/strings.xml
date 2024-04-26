@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ConsulateApplication</string>
+
+    <string-array name="CountriesName">
+        <item>Türkiye</item>
+        <item>Portekiz</item>
+        <item>Filistin</item>
+        <item>Bosna Hersek</item>
+        <item>Kazakistan</item>
+        <item>Fas</item>
+    </string-array>
+
+</resources>

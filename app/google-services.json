@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "879460010747",
+    "project_id": "consulateapplicationdb",
+    "storage_bucket": "consulateapplicationdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:879460010747:android:f9545f924c93dc82187e5e",
+        "android_client_info": {
+          "package_name": "com.arifozcan.consulateapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyApb-iL6Q2qXeImFz18P9UC_JrfyclKf6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
