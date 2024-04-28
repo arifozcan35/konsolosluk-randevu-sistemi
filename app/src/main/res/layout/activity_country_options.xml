@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".CountryOptions">
 
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ulkebilgileriekrani"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/txtCountryOption"
         android:layout_width="244dp"
@@ -23,10 +32,11 @@
 
     <Button
         android:id="@+id/button"
-        android:layout_width="139dp"
-        android:layout_height="70dp"
-        android:text="Button"
-        android:textSize="24sp"
+        android:layout_width="147dp"
+        android:layout_height="82dp"
+        android:background="#EA8F09"
+        android:text="Vize Türleri"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,10 +46,11 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="137dp"
-        android:layout_height="72dp"
-        android:text="Button"
-        android:textSize="24sp"
+        android:layout_width="147dp"
+        android:layout_height="85dp"
+        android:background="#EA8F09"
+        android:text="Randevu Al"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,10 +60,11 @@
 
     <Button
         android:id="@+id/button3"
-        android:layout_width="132dp"
-        android:layout_height="71dp"
-        android:text="Button"
-        android:textSize="24sp"
+        android:layout_width="144dp"
+        android:layout_height="89dp"
+        android:background="#EA8F09"
+        android:text="Vize Başvurusu"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

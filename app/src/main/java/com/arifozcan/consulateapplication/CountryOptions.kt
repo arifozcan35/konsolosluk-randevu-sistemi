@@ -1,6 +1,8 @@
 package com.arifozcan.consulateapplication
 
+import android.app.appsearch.StorageInfo
 import android.content.Intent
+import android.gesture.GestureStroke
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,11 +18,17 @@ import com.arifozcan.consulateapplication.databinding.ActivityCountryOptionsBind
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.firestore
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.storage
 
 class CountryOptions : AppCompatActivity() {
 
     private lateinit var binding : ActivityCountryOptionsBinding
     private lateinit var auth : FirebaseAuth
+    private lateinit var firestore: FirebaseFirestore
+    private lateinit var storage: FirebaseStorage
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +38,9 @@ class CountryOptions : AppCompatActivity() {
         setContentView(view)
 
         auth = Firebase.auth
+        firestore = Firebase.firestore
+        storage = Firebase.storage
+
 
 
         // sayfa başlığı (ülke ismi)

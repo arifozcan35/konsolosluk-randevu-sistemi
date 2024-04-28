@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".CountriesActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ulkesecmeekrani"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/txtCountry"
         android:layout_width="372dp"
@@ -25,6 +34,8 @@
         android:id="@+id/spinner_countries"
         android:layout_width="308dp"
         android:layout_height="68dp"
+        android:background="#AA0606"
+        android:backgroundTint="#AA0606"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,6 +47,7 @@
         android:id="@+id/btnCountry"
         android:layout_width="123dp"
         android:layout_height="74dp"
+        android:background="#E33A3A"
         android:onClick="ulkeSecClicked"
         android:text="Seç"
         app:layout_constraintBottom_toBottomOf="parent"

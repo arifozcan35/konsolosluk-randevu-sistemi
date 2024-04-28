@@ -7,6 +7,15 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/girisekrani"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
+
     <TextView
         android:id="@+id/textView1"
         android:layout_width="387dp"
@@ -52,7 +61,7 @@
         android:id="@+id/txtPassword"
         android:layout_width="235dp"
         android:layout_height="66dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
@@ -65,7 +74,7 @@
         android:id="@+id/btnSignIn"
         android:layout_width="111dp"
         android:layout_height="65dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="84dp"
         android:onClick="signInClicked"
         android:text="Sign In"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,7 +87,7 @@
         android:id="@+id/btnSignUp"
         android:layout_width="111dp"
         android:layout_height="66dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="84dp"
         android:onClick="signUpClicked"
         android:text="Sign Up"
         app:layout_constraintEnd_toEndOf="parent"
