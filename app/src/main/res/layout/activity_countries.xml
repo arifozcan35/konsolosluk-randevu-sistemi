@@ -11,9 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/ulkesecmeekrani"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp"
+        app:srcCompat="@drawable/ulkesec"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -22,6 +20,7 @@
         android:layout_height="77dp"
         android:text="Hello"
         android:textAlignment="center"
+        android:textColor="#FDFDFD"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,13 +33,16 @@
         android:id="@+id/spinner_countries"
         android:layout_width="308dp"
         android:layout_height="68dp"
-        android:background="#AA0606"
-        android:backgroundTint="#AA0606"
+        android:background="#9F2323"
+        android:backgroundTint="#B52828"
+        android:textAlignment="center"
+        android:textSize="23sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.223"
         tools:ignore="MissingConstraints" />
 
     <Button
@@ -54,6 +56,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.741" />
+        app:layout_constraintVertical_bias="0.761" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

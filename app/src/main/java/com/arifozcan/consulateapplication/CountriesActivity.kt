@@ -1,6 +1,8 @@
 package com.arifozcan.consulateapplication
 
+import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -23,6 +25,10 @@ class CountriesActivity : AppCompatActivity() {
     private lateinit var binding : ActivityCountriesBinding
     private lateinit var auth : FirebaseAuth
 
+    // sharedPreferences tanımlama
+    private lateinit var sharedPreferences: SharedPreferences
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,9 +39,9 @@ class CountriesActivity : AppCompatActivity() {
         auth = Firebase.auth
 
 
-
-
-
+        // SharedPreferences
+        sharedPreferences = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE)
+        
 
         // Spinnerde ülke isimlerini gösterme ve seçme
         var countriesName = resources.getStringArray(R.array.CountriesName)
@@ -51,39 +57,37 @@ class CountriesActivity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
+                    val selectedCountry = countriesName[position]
+                    // Seçilen ülkeyi SharedPreferences'e kaydetme
+                    sharedPreferences.edit().putString("selectedCountry", selectedCountry).apply()
+                    Toast.makeText(applicationContext, "Seçilen Ülke : $selectedCountry", Toast.LENGTH_SHORT).show()
+                    binding.txtCountry.text = selectedCountry
+
+
+                    /*
                     Toast.makeText(applicationContext, "Seçilen Ülke : " + countriesName[position],
                         Toast.LENGTH_SHORT).show()
                     binding.txtCountry.text = countriesName[position]
-                    val a = countriesName[position]
-                    /*
-                    val selectedCountry = countriesName[position]
-                    val intent = Intent(applicationContext, CountryOptions::class.java)
-                    intent.putExtra("Selected Country", selectedCountry)
-                    startActivity(intent)
-                    finish()
+
                      */
+
                 }
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                     TODO("Not yet implemented")
                 }
             }
+
         }
 
     }
 
-
     // ülke seç butonu
-    fun ulkeSecClicked(view : View) {
+    public fun ulkeSecClicked(view : View) {
         val selectedCountry = binding.spinnerCountries.selectedItem.toString()
-        val intent = Intent(applicationContext, CountryOptions::class.java)
-        intent.putExtra("selectedCountry", selectedCountry)
-        startActivity(intent)
-
+        val intentSayfa = Intent(applicationContext, CountryOptions::class.java)
+        intentSayfa.putExtra("selectedCountry", selectedCountry)
+        startActivity(intentSayfa)
     }
-
-
-
-
 
 
     // option menü seçenekleri

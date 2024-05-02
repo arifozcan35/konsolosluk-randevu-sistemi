@@ -15,6 +15,15 @@
         android:theme="@style/Theme.ConsulateApplication"
         tools:targetApi="31">
         <activity
+            android:name=".VizeBasvurusu"
+            android:exported="false" />
+        <activity
+            android:name=".RandevuAl"
+            android:exported="false" />
+        <activity
+            android:name=".VizeTurleri"
+            android:exported="false" />
+        <activity
             android:name=".CountryOptions"
             android:exported="false" />
         <activity
