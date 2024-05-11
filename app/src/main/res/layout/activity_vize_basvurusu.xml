@@ -8,9 +8,75 @@
     tools:context=".VizeBasvurusu">
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/imgSelect"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/vize"
+        android:onClick="imgSelectClicked"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.077"
+        app:srcCompat="@drawable/selectimage"
         tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtNameSurname"
+        android:layout_width="230dp"
+        android:layout_height="58dp"
+        android:ems="10"
+        android:hint="Name and Surname"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.372"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtDateBirth"
+        android:layout_width="228dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Date of Birth"
+        android:inputType="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.47"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/txtPhone"
+        android:layout_width="232dp"
+        android:layout_height="62dp"
+        android:ems="10"
+        android:hint="Phone Number"
+        android:inputType="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.575"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="111dp"
+        android:layout_height="57dp"
+        android:onClick="btnSaveClicked"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.936"
+        tools:ignore="MissingConstraints" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
