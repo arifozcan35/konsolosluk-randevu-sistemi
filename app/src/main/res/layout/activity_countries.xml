@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         app:srcCompat="@drawable/ulkesec"
         tools:ignore="MissingConstraints" />
 
@@ -36,7 +36,7 @@
         android:background="#9F2323"
         android:backgroundTint="#B52828"
         android:textAlignment="center"
-        android:textSize="23sp"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -52,6 +52,7 @@
         android:background="#E33A3A"
         android:onClick="ulkeSecClicked"
         android:text="Seç"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

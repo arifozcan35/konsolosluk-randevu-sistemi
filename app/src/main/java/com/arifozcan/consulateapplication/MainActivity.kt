@@ -1,5 +1,6 @@
 package com.arifozcan.consulateapplication
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -18,6 +19,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private lateinit var auth : FirebaseAuth
 
+    /*
+    // veri çekmek için arraylist oluşturma
+    private lateinit var visaList : ArrayList<Visa>
+
+     */
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,6 +34,8 @@ class MainActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        // visaList = ArrayList<Visa>()
+
 
         val currentUser = auth.currentUser
 
@@ -35,6 +44,35 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
             finish()
         }
+
+
+
+        /*
+        // SQL veri çekmek
+        try {
+
+            val database = this.openOrCreateDatabase("VisaApply", Context.MODE_PRIVATE,null)
+
+            val cursor = database.rawQuery("SELECT * FROM visaaply",null)
+            val customerNameIx = cursor.getColumnIndex("customerName")
+            val idIx = cursor.getColumnIndex("id")
+
+            while (cursor.moveToNext()) {
+                val name = cursor.getString(customerNameIx)
+                val id = cursor.getInt(idIx)
+                val visa = Visa(name,id)
+                visaList.add(visa)
+            }
+
+            // artAdapter.notifyDataSetChanged()
+
+            cursor.close()
+
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
+         */
 
 
     }

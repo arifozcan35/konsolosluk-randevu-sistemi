@@ -80,7 +80,7 @@ class CountryOptions : AppCompatActivity() {
     }
 
     fun vizeBasvurusuClicked(view : View) {
-            val intent = Intent(applicationContext, VizeBasvurusu::class.java)
+            val intent = Intent(applicationContext, BasvuruDurumu::class.java)
         startActivity(intent)
 
     }

@@ -3,7 +3,9 @@ package com.arifozcan.consulateapplication
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.database.sqlite.SQLiteDatabase
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.ImageDecoder
 import android.os.Build
 import android.os.Bundle
@@ -46,6 +48,7 @@ class VizeBasvurusu : AppCompatActivity() {
     private lateinit var permissionLauncher: ActivityResultLauncher<String>
 
     var selectedBitmap : Bitmap? = null
+    private lateinit var database: SQLiteDatabase
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -57,8 +60,42 @@ class VizeBasvurusu : AppCompatActivity() {
         firestore = Firebase.firestore
         storage = Firebase.storage
 
+        database = this.openOrCreateDatabase("Visas", MODE_PRIVATE, null)
+
 
         registerLauncher()
+
+        val intent = intent
+        val info = intent.getStringExtra("info")
+        if(info.equals("new")){
+            binding.txtNameSurname.setText("")
+            binding.txtDateBirth.setText("")
+            binding.txtPhone.setText("")
+            binding.btnSave.visibility = View.VISIBLE
+            binding.imgSelect.setImageResource(R.drawable.selectimage)
+        }else{
+            binding.btnSave.visibility = View.INVISIBLE
+            val selectedId = intent.getIntExtra("id", 1)
+
+            val cursor = database.rawQuery("SELECT * FROM visas WHERE id = ?", arrayOf(selectedId.toString()))
+
+            val visaCustomerNameIx = cursor.getColumnIndex("customerName")
+            val visaCustomerDateIx = cursor.getColumnIndex("customerDate")
+            val visaCustomerPhoneIx = cursor.getColumnIndex("customerPhone")
+            val imageIx = cursor.getColumnIndex("image")
+
+            while(cursor.moveToNext()){
+                binding.txtNameSurname.setText(cursor.getString(visaCustomerNameIx))
+                binding.txtDateBirth.setText(cursor.getString(visaCustomerDateIx))
+                binding.txtPhone.setText(cursor.getString(visaCustomerPhoneIx))
+
+                val byteArray = cursor.getBlob(imageIx)
+                val bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+                binding.imgSelect.setImageBitmap(bitmap)
+            }
+
+            cursor.close()
+        }
 
     }
 
@@ -130,10 +167,10 @@ class VizeBasvurusu : AppCompatActivity() {
 
             // veritabanını oluşturmak (SQLite)
             try {
-                val database = this.openOrCreateDatabase("VisaApply", MODE_PRIVATE, null)
-                database.execSQL("CREATE TABLE IF NOT EXISTS arts (id INTEGER PRIMARY KEY, customerName VARCHAR, customerDate VARCHAR, customerPhone VARCHAR, image BLOB)")
+                // val database = this.openOrCreateDatabase("Visas", MODE_PRIVATE, null)
+                database.execSQL("CREATE TABLE IF NOT EXISTS visas (id INTEGER PRIMARY KEY, customerName VARCHAR, customerDate VARCHAR, customerPhone VARCHAR, image BLOB)")
 
-                val sqlString = "INSERT INTO visaapply (customerName, customerDate, customerPhone, image) VALUES (?, ?, ?, ?)"
+                val sqlString = "INSERT INTO visas (customerName, customerDate, customerPhone, image) VALUES (?, ?, ?, ?)"
                 val statement = database.compileStatement(sqlString)
                 statement.bindString(1, customerName)
                 statement.bindString(2, customerDate)
@@ -146,7 +183,7 @@ class VizeBasvurusu : AppCompatActivity() {
                 e.printStackTrace()
             }
 
-            val intent = Intent(this@VizeBasvurusu, MainActivity::class.java)
+            val intent = Intent(this@VizeBasvurusu, BasvuruDurumu::class.java)
             // arkada ne kadar aktivite varsa hepsini kapatıyoruz sonra main kativiteye dönüyoruz
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
             startActivity(intent)
@@ -207,7 +244,6 @@ class VizeBasvurusu : AppCompatActivity() {
             }
         }
     }
-
 
 
     // option menü seçenekleri
