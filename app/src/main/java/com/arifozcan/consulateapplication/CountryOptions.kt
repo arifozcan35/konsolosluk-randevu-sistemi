@@ -74,7 +74,7 @@ class CountryOptions : AppCompatActivity() {
     }
 
     fun randevuAlClicked(view : View) {
-        val intent = Intent(applicationContext, RandevuAl::class.java)
+        val intent = Intent(applicationContext, MapsActivity::class.java)
         startActivity(intent)
 
     }
