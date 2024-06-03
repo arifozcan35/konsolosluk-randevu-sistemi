@@ -3,8 +3,7 @@
     <!-- <style name="Base.Theme.ConsulateApplication" parent="Theme.Material3.DayNight.NoActionBar"> -->
     <style name="Base.Theme.ConsulateApplication" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
-
     <style name="Theme.ConsulateApplication" parent="Base.Theme.ConsulateApplication" />
+
 </resources>

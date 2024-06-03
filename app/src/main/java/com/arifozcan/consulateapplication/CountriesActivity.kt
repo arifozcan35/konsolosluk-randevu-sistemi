@@ -36,6 +36,7 @@ class CountriesActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+
         auth = Firebase.auth
 
 

@@ -1,22 +1,16 @@
 package com.arifozcan.consulateapplication
 
-import android.app.appsearch.StorageInfo
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import android.gesture.GestureStroke
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import android.widget.TextView
-import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.arifozcan.consulateapplication.databinding.ActivityCountriesBinding
 import com.arifozcan.consulateapplication.databinding.ActivityCountryOptionsBinding
+import com.arifozcan.consulateapplication.view.MapsMainActivity
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.auth
@@ -74,7 +68,7 @@ class CountryOptions : AppCompatActivity() {
     }
 
     fun randevuAlClicked(view : View) {
-        val intent = Intent(applicationContext, MapsActivity::class.java)
+        val intent = Intent(applicationContext, MapsMainActivity::class.java)
         startActivity(intent)
 
     }
