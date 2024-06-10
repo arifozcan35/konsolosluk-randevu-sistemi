@@ -16,7 +16,7 @@ class Place(
     @ColumnInfo(name = "longitude")
     var longitude: Double
     
-    )  {
+    ) : Serializable {
 
     @PrimaryKey(autoGenerate = true)
     var id = 0

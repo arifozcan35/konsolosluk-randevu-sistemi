@@ -19,12 +19,6 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding : ActivityMainBinding
     private lateinit var auth : FirebaseAuth
 
-    /*
-    // veri çekmek için arraylist oluşturma
-    private lateinit var visaList : ArrayList<Visa>
-
-     */
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -33,9 +27,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         auth = Firebase.auth
-
-        // visaList = ArrayList<Visa>()
-
 
         val currentUser = auth.currentUser
 

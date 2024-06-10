@@ -12,21 +12,15 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.view.Menu
 import android.view.MenuItem
-import android.view.PixelCopy.Request
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
-import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
-import androidx.activity.result.contract.ActivityResultContract
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.arifozcan.consulateapplication.databinding.ActivityVizeBasvurusuBinding
-import com.arifozcan.consulateapplication.databinding.ActivityVizeTurleriBinding
 import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.Firebase
 import com.google.firebase.auth.FirebaseAuth
@@ -40,6 +34,8 @@ import java.io.ByteArrayOutputStream
 class VizeBasvurusu : AppCompatActivity() {
 
     private lateinit var binding : ActivityVizeBasvurusuBinding
+
+
     private lateinit var auth : FirebaseAuth
     private lateinit var firestore: FirebaseFirestore
     private lateinit var storage: FirebaseStorage
